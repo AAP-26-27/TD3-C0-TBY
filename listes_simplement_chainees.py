@@ -49,10 +49,14 @@ class ListeChainee:
     def afficher_recursif(self):
         def afficher_aux(cell) : 
             # A compléter : fonction locale
-            # ordre de la récurrence ?
-            # cas de base ? 
+            # ordre de la récurrence ? => nb de cellules 
+            # cas de base ? => aucune cellule 
+            if cell is None : 
+                print("None")
+            else : 
             # cas général ?
-            pass
+                print(f"{cell.valeur} --> ", end="") # V1 --> 
+                afficher_aux(cell.suivant) # V2 --> V3 --> ... --> None 
 
         if self.tete is None: 
             print("Liste vide !")
@@ -80,6 +84,14 @@ class ListeChainee:
 
 
     def inserer_queue(self, val):
+        # Si liste vide 
+        #   self.tete = Cellule(val)
+        # Sinon (liste non vide) 
+        #   cell = self.tete
+        #   TANT QUE cell.suivant n'est pas None
+        #       cell = cell.suivant
+        #   cell.suivant = Cellule(val)
+
         pass
 
     def inserer_queue_recursif(self, val):
